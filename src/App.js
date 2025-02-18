@@ -1,10 +1,9 @@
 import './App.css';
 import DurationExercise from "./components/DurationExercise";
 import RepetitionExercise from './components/RepetitionExercise';
-import {useNavigate} from "react";
+import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom"
 
-function start() {
-
+function StartHome() {
   return (
     <div className='App'>
       <header className='app-Header'>
@@ -13,7 +12,6 @@ function start() {
       </header>
     </div>
   );
-
 }
 
 function ExerciseButtons() {
@@ -22,8 +20,8 @@ function ExerciseButtons() {
   return (
     <nav>
       <ul>
-        <li> <button onClick={() => nav("/stair-master")}>Stair Master</button></li>
-        <li> <button onClick={() => nav("/hack-squat")}>Hack Squat</button></li>
+        <li><button onClick={() => nav("/stair-master")}>Stair Master</button></li>
+        <li><button onClick={() => nav("/hack-squat")}>Hack Squat</button></li>
       </ul>
     </nav>
   );
@@ -31,14 +29,14 @@ function ExerciseButtons() {
 
 function App() {
   return (
-
-  <div className="App">
-    <Home />
-    <DurationExercise />
-    <RepetitionExercise />
-  </div>
-);
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<StartHome />} />
+        <Route path="/stair-master" element={<DurationExercise />} />
+        <Route path="/hack-squat" element={<RepetitionExercise />} />
+      </Routes>
+    </div>
+  );
 }
-
 
 export default App;

@@ -1,5 +1,4 @@
 import React from "react"
-import RepetitionExercise from "../RepetitionExercise"
 import { useState } from "react";
 
 const RepetitionExercise = () => {

@@ -1,5 +1,4 @@
 import React from "react"
-import DurationExercise from "../DurationExercise"
 import { useState, useRef } from "react";
 
 function DurationExercise() {
@@ -8,7 +7,7 @@ function DurationExercise() {
     const durationTime = useRef(null);
 
     const pushStart = () => {
-        if (setStair) {
+        if (startStair) {
             clearInterval(durationTime.current);
             durationTime.current = null;
         } else {
